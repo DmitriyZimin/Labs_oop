@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab_3
 {
@@ -6,35 +8,53 @@ namespace Lab_3
     {
         static void Main(string[] args)
         {
-            Passenger_cars x = new Passenger_cars();
+            List<Passenger_cars> d = new List<Passenger_cars>();
 
-            x.name = "Toyota";
-            x.horsepower = 106;
-            x.price = 1549000.20;
+            Passenger_cars x1 = new Passenger_cars("Toyota", 106, 1549000.20);
+            Passenger_cars x2 = new Passenger_cars("Lada", 87, 549000.20);
+            Passenger_cars x3 = new Passenger_cars("Skoda", 122, 1249000.20);
 
-            x.GetInfo();
-            x.Move();
-            x.TrasportingPassengers();
+            x1.GetInfo();
+            x2.GetInfo();
+            x3.GetInfo();
+            
+            d.Add(x1);
+            d.Add(x2);
+            d.Add(x3);
 
-            Buses y = new Buses();
+            int x = d.Where(e => e.price > 1000000.00).Count();
 
-            y.name = "Man";
-            y.horsepower = 120;
-            y.price = 1870000.80;
+            Console.WriteLine(x + " cars with price > 1000000.00");
 
-            y.GetInfo();
-            y.Move();
-            y.TrasportingPassengers();
+            //Passenger_cars x = new Passenger_cars();
 
-            Trucks z = new Trucks();
+            //x.name = "Toyota";
+            //x.horsepower = 106;
+            //x.price = 1549000.20;
 
-            z.name = "Kamaz";
-            z.horsepower = 150;
-            z.price = 2000000.30;
+            //x.GetInfo();
+            //x.Move();
+            //x.TrasportingPassengers();
 
-            z.GetInfo();
-            z.Move();
-            z.CargoDelivery();
+            //Buses y = new Buses();
+
+            //y.name = "Man";
+            //y.horsepower = 120;
+            //y.price = 1870000.80;
+
+            //y.GetInfo();
+            //y.Move();
+            //y.TrasportingPassengers();
+
+            //Trucks z = new Trucks();
+
+            //z.name = "Kamaz";
+            //z.horsepower = 150;
+            //z.price = 2000000.30;
+
+            //z.GetInfo();
+            //z.Move();
+            //z.CargoDelivery();
         }
     }
 }
