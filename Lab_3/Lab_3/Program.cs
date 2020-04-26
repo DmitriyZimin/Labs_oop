@@ -17,7 +17,9 @@ namespace Lab_3
             x1.GetInfo();
             x2.GetInfo();
             x3.GetInfo();
-            
+            x1.Move();
+            x1.TrasportingPassengers();
+
             d.Add(x1);
             d.Add(x2);
             d.Add(x3);
@@ -26,35 +28,25 @@ namespace Lab_3
 
             Console.WriteLine(x + " cars with price > 1000000.00");
 
-            //Passenger_cars x = new Passenger_cars();
+            Buses y = new Buses();
 
-            //x.name = "Toyota";
-            //x.horsepower = 106;
-            //x.price = 1549000.20;
+            y.name = "Man";
+            y.horsepower = 120;
+            y.price = 1870000.80;
 
-            //x.GetInfo();
-            //x.Move();
-            //x.TrasportingPassengers();
+            y.GetInfo();
+            y.Move();
+            y.TrasportingPassengers();
 
-            //Buses y = new Buses();
+            Trucks z = new Trucks();
 
-            //y.name = "Man";
-            //y.horsepower = 120;
-            //y.price = 1870000.80;
+            z.name = "Kamaz";
+            z.horsepower = 150;
+            z.price = 2000000.30;
 
-            //y.GetInfo();
-            //y.Move();
-            //y.TrasportingPassengers();
-
-            //Trucks z = new Trucks();
-
-            //z.name = "Kamaz";
-            //z.horsepower = 150;
-            //z.price = 2000000.30;
-
-            //z.GetInfo();
-            //z.Move();
-            //z.CargoDelivery();
+            z.GetInfo();
+            z.Move();
+            z.CargoDelivery();
         }
     }
 }

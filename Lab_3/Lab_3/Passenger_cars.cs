@@ -14,12 +14,12 @@ namespace Lab_3
         }
         public override void Move ()
         {
-            Console.WriteLine("Moves fast");
+            Console.WriteLine("Move fast");
         }
 
         public void TrasportingPassengers()
         {
-            Console.WriteLine("Passenger car. Can be used for transporting people");
+            Console.WriteLine("Passenger cars. Can be used for transporting people");
         }
 
     }
