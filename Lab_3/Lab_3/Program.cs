@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,6 +8,8 @@ namespace Lab_3
     class Program
     {
         [My(author = "Zimin D.")]
+
+        private static Logger log = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
             List<Passenger_cars> d = new List<Passenger_cars>();
@@ -15,6 +18,7 @@ namespace Lab_3
             Passenger_cars x2 = new Passenger_cars("Lada", 87, 549000.20);
             Passenger_cars x3 = new Passenger_cars("Skoda", 122, 1249000.20);
 
+            log.Trace("Program starts");
             x1.GetInfo();
             //x2.GetInfo();
             //x3.GetInfo();
@@ -36,29 +40,37 @@ namespace Lab_3
                     
                     try
                     {
+                        log.Trace("Calculation starts");
+
+                        log.Trace("Entry of litres");
                         Console.WriteLine("Spent fuel (litres)");
                         a = double.Parse(Console.ReadLine());
 
+                        log.Trace("Entry of Kilometrage");
                         Console.WriteLine("Kilometrage");
                         b = double.Parse(Console.ReadLine());
                     }
                     catch (FormatException)
                     {
+                        log.Info("Wrong format!");
                         Console.WriteLine("Error! Wrong format!");
                         continue;
                     }
                     catch (Exception)
                     {
+                        log.Info("Error!");
                         Console.WriteLine("Error!");
                         continue;
                     }
                     if (b == 0)
                     {
+                        log.Error("Division by zero!");
                         Console.WriteLine("Error! Division by zero!");
                         continue;
                     }
                     else
                     {
+                        log.Trace("Finding litres for 100 km");
                         Console.WriteLine(a / b * 100 + " litres for 100 km");
                     }
                     break;
